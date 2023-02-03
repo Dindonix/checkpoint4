@@ -3,14 +3,14 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import me from "../assets/NoPrincess2.jpg";
+import { useCurrentUserContext } from "../../context/userContext";
 
 const navigation = [
-  { name: "Services", link: "/services", current: false },
+  { name: "Technologies", link: "/technologies", current: false },
   { name: "Portfolio", link: "/portfolio", current: false },
   { name: "Formation", link: "/formation", current: false },
-  { name: "contact", link: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -18,6 +18,14 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const { setUser } = useCurrentUserContext();
+  const navigate = useNavigate();
+  const handleDisconnection = () => {
+    // gestion de la deconnexion
+    localStorage.clear();
+    setUser({});
+    navigate("/");
+  };
   return (
     <Disclosure as="nav" className="bg-gray-700">
       {({ open }) => (
@@ -65,14 +73,14 @@ export default function Example() {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center justify-end pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div className="absolute z-100 inset-y-0 right-0 flex items-center justify-end pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
                 <Menu as="div" className="ml-3 relative">
                   <div>
                     <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-black">
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 hover:ring-white rounded-full"
+                        className="h-8 w-8  hover:ring-white rounded-full"
                         src={me}
                         alt=""
                       />
@@ -80,7 +88,7 @@ export default function Example() {
                   </div>
                   <Transition
                     as={Fragment}
-                    enter="transition ease-out duration-100"
+                    enter="transition ease-out duration-200"
                     enterFrom="transform opacity-0 scale-95"
                     enterTo="transform opacity-100 scale-100"
                     leave="transition ease-in duration-75"
@@ -103,15 +111,16 @@ export default function Example() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <button
+                            type="button"
+                            onClick={handleDisconnection}
                             className={classNames(
                               active ? "bg-gray-800" : "",
                               "block px-4 py-2 text-sm text-white"
                             )}
                           >
                             Déconnexion
-                          </a>
+                          </button>
                         )}
                       </Menu.Item>
                     </Menu.Items>

@@ -28,12 +28,9 @@ function Connexion() {
       body,
     };
 
-    /* submit mail and password, post to back and get the result
-  if ok -> navigate to the home page
-  */
     if (email && password) {
-      // on appelle le back
       fetch("http://localhost:5000/api/login", requestOptions)
+        .then((response) => response.json())
         .then((result) => {
           setUser(result.user);
           setToken(result.token);
@@ -59,14 +56,13 @@ function Connexion() {
         <div className=" flex md:w-3/5 justify-center ">
           <input
             type="email"
-            pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
             placeholder="Entrer votre email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             id="email"
             name="email"
-            className="bg-gray-200 text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
+            className="bg-gray-200 form-control text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
           />
         </div>
         <br />
@@ -74,12 +70,11 @@ function Connexion() {
           <input
             type="password"
             required
-            value={password}
             onChange={(e) => setPassword(e.target.value)}
             id="password"
             name="password"
             placeholder="Entrer votre mot de passe"
-            className="bg-gray-200  text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
+            className="bg-gray-200 form-control  text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
           />
         </div>
         <br />

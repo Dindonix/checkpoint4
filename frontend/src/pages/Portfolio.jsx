@@ -14,9 +14,9 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="bg-gray-700">
+    <div className="bg-gray-700 flex-row">
       <Navbar />
-      <div className="bg-gray-700">
+      <div className="bg-gray-700 flex justify-center h-[100vh]">
         {project.map((projects) => (
           <ProjectCard key={projects.id} projects={projects} />
         ))}

@@ -8,7 +8,6 @@ const CurrentUserContext = createContext();
 export default CurrentUserContext;
 
 export function CurrentUserContextProvider({ children }) {
-  // on utilise un hook personnalisé
   const [user, setUser] = useLocalStorage("user", {});
   const [token, setToken] = useLocalStorage("token", "");
 
