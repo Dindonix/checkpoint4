@@ -37,10 +37,11 @@ export default function EditVehicles({ setRefresh, setEditModal }) {
 
     fetch(`http://localhost:5000/api/projects`, requestOptions)
       .then((response) => response.text())
-      .then(() => {
+      .then((response) => {
         setRefresh(true);
         console.warn(body);
-        toast(" ✅ Projet ajouté !", {
+        console.warn(response);
+        toast.success(" ✅ Projet ajouté !", {
           position: "top-center",
           autoClose: 3000,
           hideProgressBar: false,

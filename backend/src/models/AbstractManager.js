@@ -12,7 +12,7 @@ class AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `select * from  ${this.table} JOIN category ON category_id = category.id`
+      `SELECT project.* , category.name, project.id, category.id AS categoryId FROM ${this.table} JOIN category ON ${this.table}.category_id = category.id`
     );
   }
 

@@ -45,7 +45,7 @@ export default function EditVehicles({ setRefresh, project, setEditModal }) {
         .then((data) => {
           console.warn(data);
           setRefresh(true);
-          toast(" ✅ Projet modifié !", {
+          toast.success(" ✅ Projet modifié !", {
             position: "top-center",
             autoClose: 3000,
             hideProgressBar: false,

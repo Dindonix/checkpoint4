@@ -49,6 +49,7 @@ function Admin() {
       .delete(`http://localhost:5000/api/projects/${id}`, requestOptions)
       .then((response) => {
         setRefresh(true);
+        console.warn(id);
         toast(" ✅ Projet supprimé !", {
           position: "top-center",
           autoClose: 3000,
