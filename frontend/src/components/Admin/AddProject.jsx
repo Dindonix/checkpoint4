@@ -55,7 +55,7 @@ export default function EditVehicles({ setRefresh, setEditModal }) {
   return (
     <div>
       <ToastContainer />
-      <div className="bg-gray-700 fixed top-0 left-0 z-10 h-screen w-screen  overflow-hidden">
+      <div className="bg-gray-700 md:fixed md:top-0 md:left-0 md:z-10 md:h-screen md:w-screen md:overflow-hidden ">
         <button
           onClick={() => {
             handleEditModal();
@@ -70,29 +70,29 @@ export default function EditVehicles({ setRefresh, setEditModal }) {
         <form
           onSubmit={onSubmit}
           method="PUT"
-          className="grid grid-cols-2 justify-center  items-center"
+          className="md:grid md:grid-cols-2 md:justify-center md:items-center"
         >
-          <label className="flex w-1/2 ml-[25vw] flex-col text-xl mb-2">
+          <label className="flex md:w-1/2 ml-[25vw]  md:mr-[25vw] flex-col text-xl mb-2">
             Titre :
             <input
-              className="w-80 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
+              className="md:w-60 w-40 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
               type="text"
               name="project_name"
               value={dataProject.project_name}
               onChange={onChange}
             />
           </label>
-          <label className="flex w-1/2 flex-col text-xl mb-2">
+          <label className="flex ml-[25vw] md:mr-[25vw] md:ml-[0vw] w-1/2 flex-col text-xl mb-2">
             Image:
             <input
-              className="w-80 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
+              className="md:w-60 w-40 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
               type="text"
               name="project_image"
               value={dataProject.project_image}
               onChange={onChange}
             />
           </label>
-          <label className="flex w-[20vw] flex-col ml-[25vw] text-xl mb-2">
+          <label className="flex md:w-[20vw] w-[47vw] flex-col ml-[25vw] text-sm md:text-xl mb-2">
             Catégorie :
             <select
               name="category_id"
@@ -100,7 +100,7 @@ export default function EditVehicles({ setRefresh, setEditModal }) {
               id="category_id"
               onChange={onChange}
             >
-              <option value="">choisissez une catégorie</option>
+              <option value="">Choisissez une catégorie</option>
               <option value="1">Divertissement</option>
               <option value="2">Qualité de vie</option>
               <option value="3">Communication</option>

@@ -10,7 +10,7 @@ export default function ProjectCard({ projects }) {
           {projects.project_name}
         </p>
         <img
-          className="w-[25vw] h-[22vw] border-4 border-violet"
+          className="md:w-[25vw] md:h-[22vw] w-[60vw] h-[25vh]"
           src={projects.project_image}
           // src={`${VITE_BACKEND_URL}/uploads/${projects.project_image}`}
           alt="project"

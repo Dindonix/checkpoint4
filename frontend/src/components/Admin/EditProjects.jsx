@@ -73,22 +73,26 @@ export default function EditVehicles({ setRefresh, project, setEditModal }) {
         <h1 className="text-[40px] text-white font-bold text-center pb-8 mt-8">
           Modifier projet
         </h1>
-        <form onSubmit={onSubmit} method="PUT" className=" ml-[40%]">
+        <form
+          onSubmit={onSubmit}
+          method="PUT"
+          className="  ml-[25%] md:ml-[40%]"
+        >
           <label className="flex w-1/2 flex-col text-xl mb-2">
             Titre :
             <input
-              className="w-80 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
+              className="md:w-60 w-40 rounded-md border border-primary py-2 pl-4 text-lg placeholder-black"
               type="text"
               name="project_name"
               defaultValue={dataProject.project_name}
               onChange={onChange}
             />
           </label>
-          <label className="flex w-1/2 flex-col text-xl mb-2">
+          <label className="flex md:w-[20vw] w-[47vw] flex-col text-sm md:text-xl mb-2">
             Catégorie :
             <select
               defaultValue={project.category_id}
-              className="rounded h-12 w-[20vw]"
+              className="rounded h-12 md:w-[20vw] w-[41vw]"
               name="category_id"
               id="category_id"
               onChange={onChange}
@@ -102,7 +106,7 @@ export default function EditVehicles({ setRefresh, project, setEditModal }) {
           <div className=" mt-8">
             <button
               type="submit"
-              className="bg-black text-white py-2 px-[2.5rem] rounded-[20px] w-44 text-md mb-4 ml-16"
+              className="bg-black text-white py-2 px-[2.5rem] rounded-[20px] w-44 text-md mb-4 md:ml-16"
             >
               Enregistrer
             </button>

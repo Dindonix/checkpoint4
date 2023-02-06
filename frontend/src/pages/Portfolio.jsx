@@ -14,13 +14,14 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="bg-gray-700 flex-row">
+    <div className="bg-gray-700 h-[100vh]">
       <Navbar />
-      <div className="bg-gray-700 flex justify-center h-[100vh]">
+      <div className="bg-gray-700 md:flex md:flex-row md:pl-8 md:justify-center flex-col h-[100vh]">
         {project.map((projects) => (
           <ProjectCard key={projects.id} projects={projects} />
         ))}
       </div>
+      <div className="flex bg-gray-700 justify-center md:h-[0vh] h-[100vh]" />
     </div>
   );
 }

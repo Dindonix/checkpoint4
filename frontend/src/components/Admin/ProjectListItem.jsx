@@ -10,16 +10,16 @@ function ProjectListItem({ setRefresh, project, handleDelete }) {
   };
 
   return (
-    <div className="flex justify-between text-gray-400">
+    <div className="flex justify-between mt-20 text-gray-400">
       <div className="font-normal px-3 pt-0 pb-3 ">{project.project_name}</div>
       <div className="flex flex-col">
         <div className="font-normal italic px-3 pt-0 pb-3 ">
-          catégorie du projet : {project.name}
+          catégorie : {project.name}
         </div>
       </div>
-      <div className="font-normal px-3 pt-0 pb-3">
+      <div className="font-normal px-3 pt-0 pb-20">
         <img
-          className="w-[20vw] h-[40vh]"
+          className="md:w-[20vw] md:h-[40vh] w-[50vw] h-[10vh]"
           src={project.project_image}
           alt="project"
         />

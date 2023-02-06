@@ -74,11 +74,11 @@ function Admin() {
   return (
     <div>
       <ToastContainer />
-      <div className=" flex bg-gray-700 ">
+      <div className=" flex">
         <div className="flex-grow">
-          <div className="flex-grow bg-white dark:bg-gray-900 overflow-y-auto">
-            <div className="sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col z-0 w-full  bg-gray-900 ">
+          <div className=" dark:bg-gray-900 overflow-y-auto">
               <Navbar />
+            <div className="sm:px-7 sm:pt-7 px-4 pt-4 flex flex-col z-0 w-full  bg-gray-900 ">
               <div className="flex items-center space-x-3 sm:mt-7 mt-4">
                 <p className="px-3 border-b-2 border-blue-500 text-blue-500 pb-1.5">
                   Projets
@@ -86,7 +86,7 @@ function Admin() {
                 <div className=" w-16 flex justify-center rounded-md shadow-lg mb-1  ">
                   <button
                     onClick={() => handleEditPostModal()}
-                    className="text-white  rounded-md ml-6 w-[7vw] bg-black p-2 flex"
+                    className="text-white  rounded-md ml-6 md:w-[7vw] bg-black p-2 flex"
                     type="button"
                   >
                     Ajouter
